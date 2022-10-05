@@ -2,17 +2,50 @@
 <html lang="en">
 
 <head>
+    <!-- Meta Tags -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="A fun simple quiz games that you can play in your browser">
+    <!-- Title -->
     <title>Grant's Quiz Game</title>
-    <link rel="stylesheet" href="./assets/style.css">
+    <!-- Style Link -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- Google Font Links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&family=Roboto&display=swap" rel="stylesheet">
 </head>
 
 <body>
-
-    <script src="./assets/script.js"></script>
+    
+    <header>
+        <a href="./scores.html">View Scores</a>
+    </header>
+    
+    <div class="container">
+        
+        <!-- Quiz Title and Start Button -->
+        <div class="start-quiz">
+            <h1>Grant's Amazing Quiz of Awesomeness</h1>
+            <div class="instruction-box">
+                <h2>Instructions</h2>
+                <p>Read the question and select the correct answer.</p>
+            </div>            
+            <button id="start-button">Start</button>
+        </div>
+        
+        <!-- Multiple-Choice Quiz Card -->
+        <div class="quiz-questions hidden">
+            <h3 class="question">Quiz question</h3>
+            <button class="answer">Answer 1</button>
+            <button class="answer">Answer 2</button>
+            <button class="answer">Answer 3</button>
+            <button class="answer">Answer 4</button>
+        </div>
+        
+    </div>
+    <script src="./assets/js/script.js"></script>
 </body>
 
 </html>
