@@ -1,0 +1,188 @@
+/* 
+Color Palete
+Prim: #f5f5f5
+Second: #01ecd5
+Tert: #4586ff
+Quat: #32424a
+ */
+
+/* 
+ Fonts
+ 1) Roboto - font-family: 'Roboto', sans-serif;
+ 2) Nunito - font-family: 'Nunito', sans-serif;
+ */
+ :root {
+  --prim: #f5f5f5;
+  --second: #01ecd5;
+  --tert: #4586ff;
+  --quat: #32424a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  width: 100%;
+  background-color: var(--prim);
+  color: var(--quat);
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+}
+
+/* Hides contents of div (see JS) */
+.hidden {
+  display: none;
+}
+
+header {
+  width: 100%;
+}
+
+header a {
+  display: block;
+  width: 45%;
+  text-decoration: none;
+  border: 1.5px solid var(--quat);
+  color: var(--quat);
+  font-weight: bold;
+  padding: .3em 0;
+  margin: .25em;
+  border-radius: 5px;
+  text-align: center;
+}
+
+h1,
+h2, 
+h3 {
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  display: block;
+  width: 100%;
+  height: 100vh;
+}
+
+/* Start Quiz */
+.start-quiz {
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  background-color: var(--second);
+  font-size: 150%;
+  text-align: center;
+  margin: .25em;
+  padding: .5em;
+}
+
+.instruction-box {
+  display: block;
+  margin: 0 .25em;
+}
+
+.start-quiz h2 {
+  font-size: 135%;
+  margin-top: 20%;
+}
+
+.start-quiz p {
+  font-size: 110%;
+  margin: .25em 1em;
+  height: 30%;
+}
+
+.start-quiz h2::after {
+  display: block;
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: #00cdcb;
+  margin: .5em 0;
+}
+
+.instruction-box::after {
+  display: block;
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: #00cdcb;
+  margin: .5em 0;
+}
+
+.start-quiz button {
+  width: 75%;
+  margin: 50% auto .25em  auto;
+  background-color: var(--quat);
+  color: var(--prim);
+  font-size: 120%;
+  font-weight: bolder;
+  letter-spacing: .1em;
+  padding: .5em 0;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+button:active {
+  transform: scale(.90);
+}
+
+/* Quiz Questions */
+.quiz-questions button {
+  display: block;
+}
+
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) { 
+  .start-quiz h2, .start-quiz button {
+    margin-top: 5%;
+  }
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+  h1 {
+    font-size: 200%;
+  }
+  
+  .start-quiz h2 {
+    font-size: 180%;
+    margin-top: 10%;
+  }
+  
+ .start-quiz p {
+    font-size: 120%;
+  }
+  
+  header a {
+    width: 20%;
+    font-size: 110%;
+  }
+
+  .start-quiz button {
+    font-size: 150%;
+    margin-top: 50%;
+  }
+ }
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .instruction-box {
+    width: 70%;
+    margin: 0 auto;
+  }
+  .start-quiz h2 {
+    margin-top: 5%;
+  } 
+  .start-quiz button {
+    margin-top: 10%;
+    width: 70%;
+  }
+ }
