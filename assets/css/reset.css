@@ -1,0 +1,25 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+h1 {
+    margin-block-start: 0;
+    margin-block-end: 0;
+  }
+  
+  div {
+    display: block;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  button {
+    border: none;
+    cursor: pointer;
+  }
+  
