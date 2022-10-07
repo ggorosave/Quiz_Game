@@ -23,7 +23,7 @@
 
         <!-- Link to Scores page -->
         <div id="view-score">
-            <a href="./scores.html">View Scores</a>
+            <a href="./scores.html" class="nunito round">View Scores</a>
         </div>
 
         <!-- Div to hold our timer -->
@@ -33,48 +33,53 @@
 
     </div>
 
+    <h1>Grant's Amazing Quiz of Awesomeness</h1>
+
     <div id="main-container">
-
+        
         <!-- Quiz Title and Start Button -->
-        <div class="start-quiz hidden">
-
-            <h1>Grant's Amazing Quiz of Awesomeness</h1>
-            
+        <div class="start-quiz">
+        
             <div class="instruction-box">
-                <h2>Instructions</h2>
-                <p>Read the following questions and try to select the correct answer within the time limit. Incorrect
-                    answers will reduce your score and the deduct 15 seconds from your time.</p>
+                <h2 class="m-bottom">Instructions</h2>
+                <div class="divider"></div>
+                <p>Read the following questions and try to select the correct answer within the time limit. Incorrect answers will reduce your score and the deduct 15 seconds from your time.</p>
+                <div class="divider"></div>
             </div>
-
-            <button id="start-button">Start Quiz</button>
+            <button id="start-button" class="round">Start Quiz</button>
 
         </div>
 
         <!-- Multiple-Choice Quiz Card -->
-        <div class="quiz-questions">
+        <div class="quiz-questions hidden">
 
+            <div class="divider"></div>
             <h3 class="question">Quiz question</h3>
+            <div class="divider"></div>
             
-            <button class="answer">Answer 1</button>
-            <button class="answer">Answer 2</button>
-            <button class="answer">Answer 3</button>
-            <button class="answer">Answer 4</button>
+            <button class="answer nunito round class="m-bottom"">Answer 1</button>
+            <button class="answer nunito round class="m-bottom"">Answer 2</button>
+            <button class="answer nunito round class="m-bottom"">Answer 3</button>
+            <button class="answer nunito round class="m-bottom"">Answer 4</button>
 
         </div>
 
         <!-- Div to dynamically display feedback to the user -->
-        <div class="feedback">
-            <h3 class="answer correct">Correct!</h3>
-            <h3 class="answer wrong">Wrong!</h3>
+        <div class="feedback hidden">
+            <div class="divider"></div>
+            <h3 class="fb correct">Correct!</h3>
+            <h3 class="fb wrong">Wrong!</h3>
         </div>
 
         <!-- Div for the end screen -->
         <div class="end-screen hidden">
-            <h2>Done!</h2>
-            <p>Your final score is <span id="score">_</span>.</p>
+            <h2 class="m-bottom">Done!</h2>
+            <p class="m-bottom">Your final score is <span id="score">_</span>.</p>
             <form>
-                <input type="text" id="user-initials" name="user-initials" />
-                <button type="submit">Submit</button>
+                <label for="user-initials" class="m-bottom">Enter initials:</label>
+                <!-- change maxlength 5 -->
+                <input type="text" id="user-initials" class="nunito round" name="user-initials" maxlength="5" />
+                <button type="submit" class="round">Submit</button>
             </form>
 
         </div>
