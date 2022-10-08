@@ -184,7 +184,7 @@ h1 {
 }
 
 .end-screen input[type=text] {
-  width: 30%;
+  width: 100%;
   border: none;
   background-color: rgba(81, 173, 207, .4);
   color: var(--quat);
@@ -194,6 +194,16 @@ h1 {
 
 .end-screen button {
   padding: .3em 1em;
+}
+
+#submit-score,
+#try-again {
+  width: 49%;
+}
+
+#try-again {
+  margin-top: .5em;
+  justify-self: end;
 }
 
 /* High Scores */
