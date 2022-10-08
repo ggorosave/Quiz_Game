@@ -30,6 +30,12 @@
             <a href="./scores.html" class="nunito round">View Scores</a>
         </div>
 
+        <div id="hide-buttons">
+            <button id="hide-start" type="button" class="round">Start</button>
+            <button id="hide-questions" class="round">Question</button>
+            <button id="hide-endscreen" class="round">End Screen</button>
+        </div>
+
         <!-- Div to hold our timer -->
         <div id="timer">
             <h3>Time: <span id="time">0</span></h3>
@@ -42,7 +48,7 @@
     <div id="main-container">
         
         <!-- Quiz Title and Start Button -->
-        <div class="start-quiz">
+        <div class="start-quiz hidden">
         
             <div class="instruction-box">
                 <h2 class="m-bottom">Instructions</h2>
@@ -71,8 +77,8 @@
         <!-- Div to dynamically display feedback to the user -->
         <div class="feedback hidden">
             <div class="divider"></div>
-            <h3 class="fb correct">Correct!</h3>
-            <h3 class="fb wrong">Wrong!</h3>
+            <h3 class="fb correct hidden">Correct!</h3>
+            <h3 class="fb wrong hidden">Wrong!</h3>
         </div>
 
         <!-- Div for the end screen -->
@@ -83,7 +89,8 @@
                 <label for="user-initials" class="m-bottom">Enter initials:</label>
                 <!-- change maxlength 5 -->
                 <input type="text" id="user-initials" class="nunito round" name="user-initials" maxlength="5" />
-                <button type="submit" class="round">Submit</button>
+                <button id="submit-score" type="submit" class="round">Submit</button>
+                <button id="try-again" class="round">Try Again</button>
             </form>
 
         </div>
