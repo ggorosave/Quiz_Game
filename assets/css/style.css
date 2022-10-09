@@ -111,7 +111,7 @@ button:active {
 }
 
 #timer {
-  width: 5em;
+  width: 16em;
   padding: .3em 0;
 }
 
@@ -276,9 +276,10 @@ h1 {
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
+
   /* Top Container */
   #timer {
-    width: 4.5em;
+    width: 10em;
   }
 
   #main-container {
@@ -342,6 +343,11 @@ h1 {
   input[type=text],
   .answer {
     font-size: 110%;
+  }
+
+  /* Top Container */
+  #timer {
+    width: 10.5em;
   }
 
   /* Start Quiz */
