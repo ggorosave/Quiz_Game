@@ -47,18 +47,18 @@ startButton.addEventListener("click", function () {
     // Object Array
     var questionsObjArr = [
         {
-            question: "The movie was so <b>mundane</b> that the audience fell asleep from boredom.",
+            question: "The movie was so ____________ that the audience fell asleep from boredom.",
             answers: [
                 {
                     txt: "relaxing",
                     val: "wrong"
                 },
                 {
-                    txt: "not interesting or exciting",
+                    txt: "mundane",
                     val: "correct"
                 },
                 {
-                    txt: "very exiting",
+                    txt: "exiting",
                     val: "wrong"
                 },
                 {
@@ -68,190 +68,190 @@ startButton.addEventListener("click", function () {
             ]
         },
         {
-            question: "The headlights car <b>emitted</b> a blinding light, so no one could see who the driver was.",
+            question: "The headlights car ____________ a blinding light, so no one could see who the driver was.",
             answers: [
                 {
-                    txt: "to cause confusion",
+                    txt: "conjured",
                     val: "wrong",
                 },
                 {
-                    txt: "to move quickly",
+                    txt: "depleted",
                     val: "wrong",
                 },
                 {
-                    txt: "to play loud music",
+                    txt: "tooted",
                     val: "wrong",
                 },
                 {
-                    txt: "to send out something such as light",
+                    txt: "emitted",
                     val: "correct",
                 }
             ]
         },
         {
-            question: "The student felt nothing but <b>disdain</b> for her classmate who tried to copy her answers.",
+            question: "The student felt nothing but ____________ for her classmate who tried to copy her answers.",
             answers: [
                 {
-                    txt: "feeling like something or someone does not deserve your respect",
+                    txt: "disdain",
                     val: "correct",
                 },
                 {
-                    txt: "feeling happy for someone",
+                    txt: "mundane",
                     val: "wrong",
                 },
                 {
-                    txt: "feeling like you want to cry",
+                    txt: "envy",
                     val: "wrong",
                 },
                 {
-                    txt: "feeling hungry for something",
+                    txt: "nausea",
                     val: "wrong",
                 }
             ]
         },
         {
-            question: "By the end of his hike through the desert, the man had <b>depleted</b> nearly all of the water in his bottle.",
+            question: "By the end of his hike through the desert, the man had ____________ nearly all of the water in his bottle.",
             answers: [
                 {
-                    txt: "to reduce something by a large amount",
+                    txt: "depleted",
                     val: "correct",
                 },
                 {
-                    txt: "to refill something",
+                    txt: "emitted",
                     val: "wrong",
                 },
                 {
-                    txt: "to throw away",
+                    txt: "swam",
                     val: "wrong",
                 },
                 {
-                    txt: "to feel hot",
+                    txt: "smelled",
                     val: "wrong",
                 }
             ]
         },
         {
-            question: "The <b>persistent</b> dog chased lizards in the garden all day despite never catching any.",
+            question: "The ____________ dog chased lizards in the garden all day despite never catching any.",
             answers: [
                 {
-                    txt: "determined to do something even though it is difficult",
+                    txt: "persistent",
                     val: "correct",
                 },
                 {
-                    txt: "easily tricked",
+                    txt: "mundane",
                     val: "wrong",
                 },
                 {
-                    txt: "smart and quick",
+                    txt: "hopeless",
                     val: "wrong",
                 },
                 {
-                    txt: "hungry",
+                    txt: "lazy",
                     val: "wrong",
                 }
             ]
         },
         {
-            question: "The lion roared with such <b>ferocity</b> that the zoo guests shook with fear.",
+            question: "The lion roared with such ____________ that the zoo guests shook with fear.",
             answers: [
                 {
-                    txt: "aggressive behavior",
-                    val: "wrong",
-                },
-                {
-                    txt: "sharp teeth",
-                    val: "wrong",
-                },
-                {
-                    txt: "cute expressions",
+                    txt: "ferocity",
                     val: "correct",
                 },
                 {
-                    txt: "slow movements",
+                    txt: "adorable eyes",
+                    val: "wrong",
+                },
+                {
+                    txt: "silly dances",
+                    val: "wrong",
+                },
+                {
+                    txt: "joy",
                     val: "wrong",
                 }
             ]
         },
         {
-            question: "I did not forgive him because his apology seemed so <b>insincere</b>.",
+            question: "I did not forgive him because his apology seemed so ____________.",
             answers: [
                 {
-                    txt: "saying or doing something that you do not believe",
+                    txt: "insincere",
                     val: "correct",
                 },
                 {
-                    txt: "so stinky you vomit",
+                    txt: "honest",
                     val: "wrong",
                 },
                 {
-                    txt: "showing a lot of respect",
+                    txt: "stinky",
                     val: "wrong",
                 },
                 {
-                    txt: "not clean or organized",
+                    txt: "disorganized",
                     val: "wrong",
                 }
             ]
         },
         {
-            question: "The teacher’s <b>perpetual</b> criticism of his work made the student hopeless and depressed.",
+            question: "The teacher’s ____________ criticism of his work made the student hopeless and depressed.",
             answers: [
                 {
-                    txt: "very encouraging",
+                    txt: "mundane",
                     val: "wrong",
                 },
                 {
-                    txt: "continuing for a long time without stopping",
+                    txt: "perpetual",
                     val: "correct",
                 },
                 {
-                    txt: "full of song",
+                    txt: "glowing",
                     val: "wrong",
                 },
                 {
-                    txt: "only happening once",
+                    txt: "joyful",
                     val: "wrong",
                 }
             ]
         },
         {
-            question: "The evil sorcerer <b>conjured</b> spirits to attack the village at night. ",
+            question: "The evil sorcerer ____________ spirits to attack the village at night. ",
             answers: [
                 {
-                    txt: "to make something appear with magic",
+                    txt: "conjured",
                     val: "correct",
                 },
                 {
-                    txt: "to throw with force",
+                    txt: "threw",
                     val: "wrong",
                 },
                 {
-                    txt: "to shoot from a gun",
+                    txt: "smelled",
                     val: "wrong",
                 },
                 {
-                    txt: "to eat slowly and savor",
+                    txt: "digested",
                     val: "wrong",
                 }
             ]
         },
         {
-            question: "We can only <b>speculate</b> who the evil sorcerer is since we have no clues to help us.",
+            question: "We can only ____________ who the evil sorcerer is since we have no clues to help us.",
             answers: [
                 {
-                    txt: "to look around",
+                    txt: "spuddle",
                     val: "wrong",
                 },
                 {
-                    txt: "to understand completely",
+                    txt: "destroy",
                     val: "wrong",
                 },
                 {
-                    txt: "to guess the truth without knowing any details or facts",
+                    txt: "speculate",
                     val: "correct",
                 },
                 {
-                    txt: "to fall down quickly",
+                    txt: "assert",
                     val: "wrong",
                 }
             ]
@@ -312,14 +312,21 @@ startButton.addEventListener("click", function () {
                 if (i === 0) {
                     clearInterval(rep);
                 }
-            }, 500);
+            }, 700);
             hideSection(feedback);
             hideSection(userFb);
+        }
+
+        // Resets Time
+        function timerReset() {
+            timeLeft = 0;
+            time.textContent = timeLeft + " seconds";
         }
 
         // Checks if questionsObjArr is empty and jumps to the end screen if true. Gets another question if not.
         function getAnotherOrEnd() {
             if (questionsObjArr.length <= 0) {
+                timerReset();
                 clearInterval(startTimer);
                 endGame();
             } else {
@@ -366,7 +373,7 @@ startButton.addEventListener("click", function () {
     // Genereates first question
     getQuestion();
 
-    // WORK HERE
+    
     //Starts timer
     var startTimer = setInterval(function () {
         timeLeft--;
@@ -379,20 +386,22 @@ startButton.addEventListener("click", function () {
         // Game Over when time hits 0
         if (timeLeft <= 0 || totalScore < 0) {
             totalScore = 0;
-            timeLeft = 0;
+            timerReset();
             clearInterval(startTimer);
             // Ends game
             endGame();
 
         }
 
+        // Caps time at 60 seconds
+        if (timeLeft > 60) {
+            timeLeft = 60;
+            time.textContent = timeLeft + " seconds";
+            return timeLeft;
+        }
+
         // Checks answers while time is greater than 0
         if (timeLeft > 0) {
-            // Caps timer at 60
-            if (timeLeft > 60) {
-                timeLeft = 60;
-            }
-
             //Event listeners for answer buttons 
             answerOne.addEventListener("click", checkAnswer);
             answerTwo.addEventListener("click", checkAnswer);
