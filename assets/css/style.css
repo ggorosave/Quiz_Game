@@ -156,11 +156,23 @@ h1 {
   margin: 30% auto 0;
 }
 
+.question {
+  font-weight: 400;
+}
+
+.question b {
+  font-weight: 900;
+}
+
 .quiz-questions button {
   width: 100%;
   text-align: start;
   margin-bottom: .25em;
 }
+
+/* .question b {
+  font-weight: 1000;
+} */
 
 .answer {
   margin-top: .3em;
