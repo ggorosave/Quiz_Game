@@ -7,10 +7,11 @@ var fbWrong = document.querySelector(".wrong");
 var endScreen = document.querySelector(".end-screen");
 var time = document.querySelector("#time");
 var score = document.querySelector("#score");
-var timeLeft = 60;
+var timeLeft = 15;
 
 // Button Variables
 var startButton = document.querySelector("#start-button");
+var submitScore = document.querySelector("#submit-score");
 
 // DELETE LATER
 var hideStart = document.querySelector("#hide-start");
@@ -42,7 +43,7 @@ startButton.addEventListener("click", function () {
     var answerFour = document.querySelector("#answer4");
 
     var totalScore = 0;
-    timeLeft = 60;
+    timeLeft = 15;
 
     // Object Array
     var questionsObjArr = [
@@ -58,7 +59,7 @@ startButton.addEventListener("click", function () {
                     val: "correct"
                 },
                 {
-                    txt: "exiting",
+                    txt: "exciting",
                     val: "wrong"
                 },
                 {
@@ -312,21 +313,16 @@ startButton.addEventListener("click", function () {
                 if (i === 0) {
                     clearInterval(rep);
                 }
-            }, 700);
+            }, 1000);
             hideSection(feedback);
             hideSection(userFb);
-        }
-
-        // Resets Time
-        function timerReset() {
-            timeLeft = 0;
-            time.textContent = timeLeft + " seconds";
         }
 
         // Checks if questionsObjArr is empty and jumps to the end screen if true. Gets another question if not.
         function getAnotherOrEnd() {
             if (questionsObjArr.length <= 0) {
-                timerReset();
+                timeLeft = 0;
+                time.textContent = timeLeft + " seconds";
                 clearInterval(startTimer);
                 endGame();
             } else {
@@ -347,7 +343,7 @@ startButton.addEventListener("click", function () {
             // Calls revealFeedback function for wrong answers
             revealFeedback(fbWrong);
             totalScore--;
-            timeLeft -= 15;
+            timeLeft -= 5;
             // DELETE
             console.log("Score:" + totalScore);
             getAnotherOrEnd();
@@ -384,24 +380,38 @@ startButton.addEventListener("click", function () {
         time.textContent = timeLeft + " seconds";
 
         // Game Over when time hits 0
-        if (timeLeft <= 0 || totalScore < 0) {
-            totalScore = 0;
-            timerReset();
+        if (timeLeft <= 0) {
+            if (totalScore < 0) {
+                totalScore = 0;
+            }
+            timeLeft = 0;
+            time.textContent = timeLeft + " seconds";
             clearInterval(startTimer);
             // Ends game
             endGame();
 
         }
 
-        // Caps time at 60 seconds
-        if (timeLeft > 60) {
-            timeLeft = 60;
+        
+
+        // Caps time at 15 seconds
+        if (timeLeft > 15) {
+            timeLeft = 15;
             time.textContent = timeLeft + " seconds";
             return timeLeft;
         }
 
+        if (totalScore < 0) {
+            totalScore = 0;
+            timeLeft = 15;
+            time.textContent = timeLeft + " seconds";
+            clearInterval(startTimer);
+            // Ends game
+            endGame();
+        }
+
         // Checks answers while time is greater than 0
-        if (timeLeft > 0) {
+        if (timeLeft > 0 && totalScore >= 0) {
             //Event listeners for answer buttons 
             answerOne.addEventListener("click", checkAnswer);
             answerTwo.addEventListener("click", checkAnswer);
@@ -409,7 +419,26 @@ startButton.addEventListener("click", function () {
             answerFour.addEventListener("click", checkAnswer);
         }
 
+
     }, 1000);
+})
+
+// Move UP
+var userInitials = document.querySelector("#user-initials");
+
+// Event lister for submit score button
+submitScore.addEventListener("click", function(event) {
+    event.preventDefault();
+
+    // Adds initial and score to local storage
+    var userScore =  {
+        name: userInitials.value.trim(),
+        score: score.textContent
+    }
+
+    localStorage.setItem("userScore", JSON.stringify(userScore));
+    window.location = ("./scores.html");
+    console.log(userScore);
 })
 
 // DELETE LATER
