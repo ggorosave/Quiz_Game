@@ -7,20 +7,10 @@ var fbWrong = document.querySelector(".wrong");
 var endScreen = document.querySelector(".end-screen");
 var time = document.querySelector("#time");
 var score = document.querySelector("#score");
-var timeLeft = 15;
 
 // Button Variables
 var startButton = document.querySelector("#start-button");
 var submitScore = document.querySelector("#submit-score");
-
-// DELETE LATER
-var hideStart = document.querySelector("#hide-start");
-var hideQuestions = document.querySelector("#hide-questions");
-var hideEndScreen = document.querySelector("#hide-endscreen");
-
-
-time.textContent = timeLeft + " seconds";
-
 
 // Hides section of page
 function hideSection(someElement) {
@@ -42,8 +32,9 @@ startButton.addEventListener("click", function () {
     var answerThree = document.querySelector("#answer3");
     var answerFour = document.querySelector("#answer4");
 
+    // Resets time and score when game starts
     var totalScore = 0;
-    timeLeft = 15;
+    var timeLeft = 15;
 
     // Object Array
     var questionsObjArr = [
@@ -263,6 +254,7 @@ startButton.addEventListener("click", function () {
 
     // Function that randomly chooses a question and loads it into the question section.
     function getQuestion() {
+
         // Chooses random question
         let chosenQuestion = questionsObjArr[Math.floor(Math.random() * questionsObjArr.length)]
 
@@ -274,24 +266,32 @@ startButton.addEventListener("click", function () {
 
         // Randomly selects answers from the array in the answer object and renders it into the answer buttons
         function getAnswer(answerBtn) {
+            // Choosese random question from questionAns array
             let randomAns = questionAns[Math.floor(Math.random() * questionAns.length)];
+
+            // Sets button text to answer text from array
             answerBtn.textContent = randomAns.txt;
+
+            // Gives button a value
             answerBtn.setAttribute("value", randomAns.val);
+
+            // Removes answer from array
             questionAns.splice(questionAns.indexOf(randomAns), 1);
             return questionAns;
         }
 
-        // Calls getAnswer function to select answer and load it to each button
-        getAnswer(answerOne);
+        // Iterates through the answerBtnArray and runs the getAnswer function for each button
+        function getAnswers() {
 
-        getAnswer(answerTwo);
+            let answerBtnArray = [answerOne, answerTwo, answerThree, answerFour];
 
-        getAnswer(answerThree);
+            for (i = 0; i < answerBtnArray.length; i++) {
+                getAnswer(answerBtnArray[i]);
+            }
+        }
 
-        getAnswer(answerFour);
-
-        // DELETE LATER
-        console.log(questionsObjArr);
+        // Calls getAnswers function
+        getAnswers();
 
         // Removes current question from array 
         questionsObjArr.splice(questionsObjArr.indexOf(chosenQuestion), 1);
@@ -320,6 +320,8 @@ startButton.addEventListener("click", function () {
 
         // Checks if questionsObjArr is empty and jumps to the end screen if true. Gets another question if not.
         function getAnotherOrEnd() {
+
+            //If there are no more questions in the array, the game ends. Otherwise, it gets another question. 
             if (questionsObjArr.length <= 0) {
                 timeLeft = 0;
                 time.textContent = timeLeft + " seconds";
@@ -334,18 +336,24 @@ startButton.addEventListener("click", function () {
         if (target.value === "correct") {
             // Calls revealFeedback function for correct answers
             revealFeedback(fbCorrect);
+            // Add one to score
             totalScore++;
-            timeLeft += 15;
-            // DELETE
-            console.log("Score:" + totalScore);
+
+            // Adds 5 seconds to time
+
+            // Checks if there are anymore questions and gets a question or ends
             getAnotherOrEnd();
         } else {
             // Calls revealFeedback function for wrong answers
             revealFeedback(fbWrong);
+
+            // Subtracts one from score
             totalScore--;
+
+            // Subtracts five secons from time
             timeLeft -= 5;
-            // DELETE
-            console.log("Score:" + totalScore);
+
+            // Checks if there are anymore questions and gets a question or ends
             getAnotherOrEnd();
         }
 
@@ -357,9 +365,24 @@ startButton.addEventListener("click", function () {
         hideSection(quizSection);
         hideSection(endScreen);
 
+        // Resets score to 0 if negative
+        if (totalScore < 0) {
+            totalScore = 0;
+        }
+
+        // Resets time to 0 if negative
+        if (timeLeft < 0) {
+            timeLeft = 0;
+        }
+        
+        // Displays time
+        time.textContent = timeLeft + " seconds";
+        
+        // Displays score
         score.textContent = totalScore;
     }
 
+    // **Function Calls**
     // Hide start quiz section
     hideSection(startQuiz);
 
@@ -369,30 +392,27 @@ startButton.addEventListener("click", function () {
     // Genereates first question
     getQuestion();
 
-    
     //Starts timer
     var startTimer = setInterval(function () {
         timeLeft--;
+
         // Changes display text from "seconds" to "second" at 1 second left
         if (timeLeft === 1) {
+            // Changes display text
             time.textContent = timeLeft + " second";
         }
+
+        // Displays time left
         time.textContent = timeLeft + " seconds";
 
         // Game Over when time hits 0
         if (timeLeft <= 0) {
-            if (totalScore < 0) {
-                totalScore = 0;
-            }
-            timeLeft = 0;
-            time.textContent = timeLeft + " seconds";
+
             clearInterval(startTimer);
             // Ends game
             endGame();
 
         }
-
-        
 
         // Caps time at 15 seconds
         if (timeLeft > 15) {
@@ -401,10 +421,9 @@ startButton.addEventListener("click", function () {
             return timeLeft;
         }
 
+        // Ends game if score is less than 0;
         if (totalScore < 0) {
-            totalScore = 0;
-            timeLeft = 15;
-            time.textContent = timeLeft + " seconds";
+            timeLeft = 0;
             clearInterval(startTimer);
             // Ends game
             endGame();
@@ -427,29 +446,15 @@ startButton.addEventListener("click", function () {
 var userInitials = document.querySelector("#user-initials");
 
 // Event lister for submit score button
-submitScore.addEventListener("click", function(event) {
+submitScore.addEventListener("click", function (event) {
     event.preventDefault();
 
     // Adds initial and score to local storage
-    var userScore =  {
+    var userScore = {
         name: userInitials.value.trim(),
         score: score.textContent
     }
 
     localStorage.setItem("userScore", JSON.stringify(userScore));
     window.location = ("./scores.html");
-    console.log(userScore);
 })
-
-// DELETE LATER
-hideStart.addEventListener("click", function () {
-    hideSection(startQuiz);
-});
-
-hideQuestions.addEventListener("click", function () {
-    hideSection(quizSection);
-});
-
-hideEndScreen.addEventListener("click", function () {
-    hideSection(endScreen);
-});
