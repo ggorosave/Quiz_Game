@@ -7,10 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="A fun simple quiz games that you can play in your browser">
+
     <!-- Title -->
     <title>Grant's Quiz Game</title>
+
     <!-- Style Link -->
+    <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/style.css">
+
     <!-- Google Font Links -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,15 +28,25 @@
 
         <div class="divider"></div>
         <div id="score-table">
-            <p class="m-bottom"><span id="place">1</span>. <span id="name">Name</span> - <span id="score">Score</span></p>
-            <p class="m-bottom"><span id="place">2</span>. <span id="name">Name</span> - <span id="score">Score</span></p>
-            <p class="m-bottom"><span id="place">3</span>. <span id="name">Name</span> - <span id="score">Score</span></p>
+            <p id="first-place" class="m-bottom hidden">1. 
+                <span id="first-name" class="all-caps"></span> - 
+                <span id="first-score"></span>
+            </p>
+            <p id="second-place" class="m-bottom hidden">2. 
+                <span id="second-name" class="all-caps"></span> - 
+                <span id="second-score"></span>
+            </p>
+            <p id="third-place" class="m-bottom hidden">3. 
+                <span id="third-name" class="all-caps"></span> - 
+                <span id="third-score"></span>
+            </p>
         </div>
         <div class="divider"></div>
 
         <div id="score-buttons">
             <a id="back" class="round" href="./index.html">Go Back</a>
-            
+            <button id="clear-scores" class="round" type="button">Clear Scores</button>
+
         </div>
 
     </div>

@@ -200,7 +200,6 @@ h1 {
   border: none;
   background-color: rgba(81, 173, 207, .4);
   color: var(--quat);
-  text-transform: uppercase;
   padding: .3em;
 }
 
@@ -237,6 +236,10 @@ h1 {
   justify-content: space-between;
 }
 
+/* Converts text to uppercase for input and user initials*/
+.all-caps {
+  text-transform: uppercase;
+}
 
 /* Dividers */
 .divider {

@@ -9,11 +9,11 @@
     <meta name="description" content="A fun simple quiz games that you can play in your browser">
 
     <!-- Title -->
-    <title>Grant's Quiz Game</title>
+    <title>Vocabulary Quiz Game</title>
 
     <!-- Style Link -->
-    <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
 
     <!-- Google Font Links -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -44,7 +44,7 @@
 
     </div>
 
-    <h1>Grant's Amazing Quiz of Awesomeness</h1>
+    <h1>Vocabulary Quiz Game</h1>
 
     <div id="main-container">
         
@@ -84,12 +84,12 @@
 
         <!-- Div for the end screen -->
         <div class="end-screen hidden">
-            <h2 class="m-bottom">Done!</h2>
+            <h2 class="m-bottom">Game Over!</h2>
             <p class="m-bottom">Your final score is <span id="score">_</span>.</p>
             <form>
                 <label for="user-initials" class="m-bottom">Enter initials:</label>
                 <!-- change maxlength 5 -->
-                <input type="text" id="user-initials" class="nunito round" name="user-initials" maxlength="5" />
+                <input type="text" id="user-initials" class="nunito round all-caps" name="user-initials" maxlength="5" />
                 <button id="submit-score" type="submit" class="round">Submit</button>
                 <button id="try-again" class="round">Try Again</button>
             </form>
