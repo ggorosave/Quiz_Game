@@ -340,9 +340,11 @@ startButton.addEventListener("click", function () {
             totalScore++;
 
             // Adds 5 seconds to time
+            timeLeft +=5;
 
             // Checks if there are anymore questions and gets a question or ends
             getAnotherOrEnd();
+
         } else {
             // Calls revealFeedback function for wrong answers
             revealFeedback(fbWrong);
