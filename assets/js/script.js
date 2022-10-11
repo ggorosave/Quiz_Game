@@ -34,7 +34,7 @@ startButton.addEventListener("click", function () {
 
     // Resets time and score when game starts
     var totalScore = 0;
-    var timeLeft = 15;
+    var timeLeft = 20;
 
     // Object Array
     var questionsObjArr = [
@@ -416,9 +416,9 @@ startButton.addEventListener("click", function () {
 
         }
 
-        // Caps time at 15 seconds
-        if (timeLeft > 15) {
-            timeLeft = 15;
+        // Caps time at 20 seconds
+        if (timeLeft > 20) {
+            timeLeft = 20;
             time.textContent = timeLeft + " seconds";
             return timeLeft;
         }
