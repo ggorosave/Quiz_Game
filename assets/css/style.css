@@ -111,7 +111,7 @@ button:active {
 }
 
 #timer {
-  width: 16em;
+  width: 9.5em;
   padding: .3em 0;
 }
 
@@ -267,7 +267,7 @@ h1 {
   /* End Screen */
   .end-screen {
     margin-top: 10%;
-    padding-left: 6em;
+    width: 60%;
   }
 
   /* Scores */
