@@ -457,6 +457,15 @@ submitScore.addEventListener("click", function (event) {
         score: score.textContent
     }
 
+    if (userInitials.value === "") {
+        // prompts user to submit score if they hit submit without typing any characters
+        window.alert("Please, input your initials if you want to submit your score.");
+    }
+
     localStorage.setItem("userScore", JSON.stringify(userScore));
-    window.location = ("./scores.html");
+
+    if (userInitials.value !== "") {
+        
+        window.location = ("./scores.html");
+    }
 })
