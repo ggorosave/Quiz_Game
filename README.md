@@ -2,13 +2,7 @@
 
 ## Description
 
-Although this project is the fourth challenge from the U of A coding bootcamp and that is the primary reason I made it, I'm interested in developing education based applications and websites. With that in mind, I put extra effort in to making this application look nice and function well--though it could probably still use some improvements. 
-
-This challenge was difficult for me because there were a lot of parts to keep track of, and it really made me think of better ways to organize and keep track of whats happening in my code. Going forward, I hope to follow a more structured process so that and can organize and track my code better.
-
-Furthermore, I continue to learn a great deal about JavaScript and how to use it to facilitate the functionality of my website. Through the process of writing this code, I've developed a firmer understanding of DOM traversal, event listeners, time intervals, and I've even further expanded my understanding of the versatility of objects and arrays. Going forward, I hope to learn ways to simplify conditonal statements in my code. 
-
-**NOTE:** Though acceptance critera for this project asked for a quiz about coding, I chose to make my quiz about vocabulary as I was a language and writing teacher for nearly fourteen years. 
+Keeping students engaged in class or focused on their homework can be difficult sometimes. The Vocabulary Quiz Game is meant to be a fun way for students to engage with material they have learned while also allowing the instructor to gauage their students' progress. For this project, I used vanilla Javascript to develop a game that would present students with multiple choice questions, earn points for correct answers, and see their initals on a score board. While this project currently presents only a small handful of vocabulary to the user and uses local storage to store data, I hope to expand it one day to allow users to input their own questions and answers and have the score data persist in future versions.
 
 **Deployed Website:** [Vocabulary Quiz Game](https://ggorosave.github.io/Quiz_Game/)
 
